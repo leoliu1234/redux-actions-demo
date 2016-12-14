@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk'
 
-import App from './containers/app';
+import Home from './containers/home';
 import rootReducer from './reducers';
 
 const store = createStore(rootReducer,
@@ -12,6 +12,6 @@ const store = createStore(rootReducer,
 );
 render(
     <Provider store={store}>
-        <App />
+        <Home />
     </Provider>,
     document.getElementById('root'));
