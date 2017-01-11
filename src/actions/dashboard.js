@@ -32,7 +32,7 @@ export const { increment, decrement } = createActions({
 
 export function getThenShow(subreddit) {
     return function (dispatch) {
-        dispatch(increment(3))
+        dispatch(increment(3));
 
         // return fetch('file:///D:/Study/Code/redux-actions-demo/test.json')
         //     .then(response => response.json())

@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as DashboardActions from '../actions/dashboard';
+import { Link } from 'react-router';
 
 class App extends React.Component {
     render() {
@@ -12,6 +13,7 @@ class App extends React.Component {
                 <a href="#" onClick={decrement.bind(this, 1)}>Decrement</a><br/>
                 <div>leo</div>
                 <a href="#" onClick={getThenShow.bind(this, 1)}>test</a><br/>
+                <Link to="/Home">App</Link>
             </div>
         );
     }

@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as DashboardActions from '../actions/dashboard';
 import Navbar from '../components/navbar';
+import { Link } from 'react-router';
 
 class Home extends React.Component {
     render() {
@@ -10,6 +11,7 @@ class Home extends React.Component {
         return (
             <div>
                 <Navbar />
+                <Link to="/">App</Link>
             </div>
         );
     }
