@@ -11,6 +11,7 @@ class Home extends React.Component {
         return (
             <div>
                 <Navbar />
+                <div>leo Liu</div>
                 <Link to="/">App</Link>
             </div>
         );
