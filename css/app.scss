@@ -1,4 +1,70 @@
-body{
-    color:red;
-    background:red;
+body {
+    color: red;
+    background: lightgoldenrodyellow;
+}
+
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#layout {
+    position: relative;
+    padding-left: 0;
+}
+
+#menu {
+    margin-left: -160px;
+    width: 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: #191818;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    .pure-menu-heading {
+        font-size: 125%;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        color: #fff;
+        margin-top: 0;
+        padding: 0.5em 0.8em;
+        text-transform: uppercase;
+    }
+    .pure-menu {
+        ul,
+        .menu-item-divided {
+            border-top: 1px solid #333;
+        }
+        li a:hover,
+        li a:focus {
+            background: #333;
+        }
+    }
+    a {
+        color: #999;
+        border: none;
+        white-space: normal;
+        padding: 0.625em 1em;
+        &:visited {
+            color: #265778;
+        }
+    }
+}
+
+@media (min-width: 58em) {
+    #menu {
+        left: 160px;
+    }
+    #layout {
+        padding-left: 160px;
+        left: 0;
+    }
 }

@@ -2,16 +2,17 @@ import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as DashboardActions from '../actions/dashboard';
-import Navbar from '../components/navbar';
+import Menu from '../components/home/menu';
+import Main from '../components/home/main';
 import { Link } from 'react-router';
 
 class Home extends React.Component {
     render() {
         const {increment, counter, decrement, getThenShow} = this.props;
         return (
-            <div>
-                <Navbar />
-                <div>leo Liu</div>
+            <div id="layout">
+                <Menu />
+                <Main/>
                 <Link to="/">App</Link>
             </div>
         );

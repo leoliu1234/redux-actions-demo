@@ -9,9 +9,7 @@
                 "build"
             ],
             "isShellCommand": true,
-            "isBackground": true,
-            "showOutput": "always",
-            "suppressTaskName": false
+            "showOutput": "always"
         },
         {
             "taskName": "buildCSS",

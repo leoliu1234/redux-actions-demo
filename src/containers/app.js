@@ -14,7 +14,7 @@ class App extends React.Component {
                 <div>leo</div>
                 <a href="#" onClick={getThenShow.bind(this, 1)}>test</a><br/>
                 <div>leo 44444444444444</div>
-                <Link to="/Home">App</Link>
+                <Link to="/Home">Home</Link>
             </div>
         );
     }
