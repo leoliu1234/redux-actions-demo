@@ -1,43 +1,56 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 export default class Main extends React.Component {
     render() {
+        const {images} = this.props;
         return (
             <div id="main">
-                <table className="pure-table pure-table-bordered">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Make</th>
-                            <th>Model</th>
-                            <th>Year</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Honda</td>
-                            <td>Accord</td>
-                            <td>2009</td>
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>Toyota</td>
-                            <td>Camry</td>
-                            <td>2012</td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>Hyundai</td>
-                            <td>Elantra</td>
-                            <td>2010</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <header className="header">Header</header>
+                <section className="content">
+                    <div className="pure-g">
+                        <div className="pure-u-1-3">
+                            <div className="image-details">
+                                <img src="/images/src_1.jpg" />
+                            </div>
+                        </div>
+                        <div className="pure-u-1-3">
+                            <div className="image-details">
+                                <img src="/images/src_2.jpg" />
+                            </div>
+                        </div>
+                        <div className="pure-u-1-3">
+                            <div className="image-details">
+                                <img src="/images/src_3.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="pure-g">
+                        <div className="pure-u-1-3">{JSON.stringify(images)}</div>
+                        <div className="pure-u-1-3"><p>Thirds</p></div>
+                        <div className="pure-u-1-3"><p>Thirds</p></div>
+                    </div>
+                    <div className="pure-g">
+                        <div className="pure-u-1-3"><p>Thirds</p></div>
+                        <div className="pure-u-1-3"><p>Thirds</p></div>
+                        <div className="pure-u-1-3"><p>Thirds</p></div>
+                    </div>
+                    <div className="pure-g">
+                        <div className="pure-u-1-3"><p>Thirds</p></div>
+                        <div className="pure-u-1-3"><p>Thirds</p></div>
+                        <div className="pure-u-1-3"><p>Thirds</p></div>
+                    </div>
+                    <div className="pure-g">
+                        <div className="pure-u-1-3"><p>Thirds</p></div>
+                        <div className="pure-u-1-3"><p>Thirds</p></div>
+                        <div className="pure-u-1-3"><p>Thirds</p></div>
+                    </div>
+                </section>
+                <footer className="footer">Footer</footer>
             </div>
         );
     }
 }
+
+Main.propTypes = {
+    images: PropTypes.array.isRequired
+};

@@ -6,7 +6,10 @@ const home = handleActions({
     }),
     DECREMENT: (state, action) => ({
         ...state, counter: state.counter - action.payload
+    }),
+    SHOWIMAGES: (state, action) => ({
+        ...state, images: action.payload
     })
-}, { counter: 0 });
+}, { counter: 0, images: [{ "url": "111" }] });
 
 export default home;

@@ -12,6 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
+    "es6-promise": "^4.1.0",
+    "isomorphic-fetch": "^2.2.1",
     "koa": "^1.2.4",
     "koa-handlebars": "^0.5.7",
     "koa-router": "^5.4.0",
@@ -22,6 +24,7 @@
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-actions": "^1.1.0",
+    "redux-logger": "^2.8.2",
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {

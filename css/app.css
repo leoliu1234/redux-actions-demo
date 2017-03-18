@@ -55,5 +55,37 @@ body {
   #layout {
     padding-left: 160px;
     left: 0; } }
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  max-width: 768px; }
+
+.header {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1em;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  letter-spacing: 0.05em; }
+
+.footer {
+  font-size: 87.5%;
+  border-top: 1px solid #eee;
+  margin-top: 3.4286em;
+  padding: 1.1429em;
+  background: #fafafa;
+  text-align: center; }
+
+@media screen and (min-width: 48em) {
+  .header,
+  .content {
+    padding-left: 2em;
+    padding-right: 2em; } }
+.image-details img {
+  width: 200px; }
 
 /*# sourceMappingURL=app.css.map */

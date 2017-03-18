@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-export default class Menu extends React.Component{
-    render(){
+export default class Menu extends React.Component {
+    render() {
         return (<div id="menu">
             <div className="pure-menu">
-                <a className="pure-menu-heading" href="/">Pure</a>
+                <Link to="/" className="pure-menu-heading">Pure</Link>
                 <ul className="pure-menu-list">
                     <li className="pure-menu-item pure-menu-selected">
                         <a href="/start/" className="pure-menu-link">Get Started</a>

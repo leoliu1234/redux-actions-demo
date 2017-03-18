@@ -1,10 +1,12 @@
 import { createActions } from 'redux-actions';
+import fetch from 'isomorphic-fetch';
 
 // export const increment = createAction('INCREMENT', amount => amount);
 
-export const { increment, decrement } = createActions({
+export const {  increment, decrement, showimages } = createActions({
     INCREMENT: amount => amount,
-    DECREMENT: amount => amount
+    DECREMENT: amount => amount,
+    SHOWIMAGES: images => images
 });
 
 
@@ -30,9 +32,9 @@ export const { increment, decrement } = createActions({
 // };
 
 
-export function getThenShow(subreddit) {
-    return function (dispatch) {
-        dispatch(increment(3))
+export const getThenShow = subreddit => {
+    return dispatch => {
+        dispatch(increment(3));
 
         // return fetch('file:///D:/Study/Code/redux-actions-demo/test.json')
         //     .then(response => response.json())
@@ -40,8 +42,20 @@ export function getThenShow(subreddit) {
         //         dispatch(increment(number))
         //     )
 
-        setTimeout(()=>{
+        setTimeout(() => {
             dispatch(increment(1));
-        },3000);
-    }
+        }, 3000);
+    };
+}
+
+export const fetchImages = () => {
+    return dispatch => {
+        fetch("/data.json")
+            .then(response => {
+                return response.json();
+            })
+            .then(json => {
+                dispatch(showimages(json));
+            });
+    };
 }
