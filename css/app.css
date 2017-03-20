@@ -58,16 +58,15 @@ body {
   margin-right: auto;
   padding-left: 1em;
   padding-right: 1em;
-  max-width: 768px; }
+  max-width: 60em; }
 
 .header {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  max-width: 768px;
+  max-width: 60em;
   margin: 0 auto;
   padding: 1em;
   text-align: center;
   border-bottom: 1px solid #eee;
-  background: #fff;
   letter-spacing: 0.05em; }
 
 .footer {
@@ -75,7 +74,6 @@ body {
   border-top: 1px solid #eee;
   margin-top: 3.4286em;
   padding: 1.1429em;
-  background: #fafafa;
   text-align: center; }
 
 @media screen and (min-width: 48em) {
@@ -83,7 +81,10 @@ body {
   .content {
     padding-left: 2em;
     padding-right: 2em; } }
-.image-details img {
-  width: 200px; }
+.image-details {
+  margin-bottom: 2em; }
+  .image-details img {
+    width: 8em;
+    height: 6em; }
 
 /*# sourceMappingURL=app.css.map */
