@@ -1,4 +1,5 @@
 import { createActions } from 'redux-actions';
+import 'babel-polyfill';
 import fetch from 'isomorphic-fetch';
 
 // export const increment = createAction('INCREMENT', amount => amount);
@@ -51,9 +52,7 @@ export const getThenShow = subreddit => {
 export const fetchImages = () => {
     return dispatch => {
         fetch("/data.json")
-            .then(response => {
-                return response.json();
-            })
+            .then(response => response.json())
             .then(json => {
                 dispatch(showimages(json));
             });

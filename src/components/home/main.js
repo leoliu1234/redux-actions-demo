@@ -5,21 +5,21 @@ export default class Main extends React.Component {
         const { images } = this.props;
 
         var imageElements = images.map(img => {
-            return <div className="pure-u-1-5">
+            return <div className="pure-u-1-5 pure-u-md-1-3">
                 <div className="image-details">
                     <img src={img.url} />
                 </div>
-            </div>
+            </div>;
         });
         return (
             <div id="main">
-                <header className="header">Header</header>
+                <header className="header"><h1>My Gallery</h1></header>
                 <section className="content">
                     <div className="pure-g">
                         {imageElements}
                     </div>
                 </section>
-                <footer className="footer">Footer</footer>
+                <footer className="footer">&copy; 2017 Leo  </footer>
             </div>
         );
     }

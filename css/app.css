@@ -1,5 +1,4 @@
 body {
-  color: red;
   background: lightgoldenrodyellow; }
 
 #layout,
@@ -82,7 +81,8 @@ body {
     padding-left: 2em;
     padding-right: 2em; } }
 .image-details {
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  text-align: center; }
   .image-details img {
     width: 8em;
     height: 6em; }

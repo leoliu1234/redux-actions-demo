@@ -10,6 +10,6 @@ const home = handleActions({
     SHOWIMAGES: (state, action) => ({
         ...state, images: action.payload
     })
-}, { counter: 0, images: [{ "url": "111" }] });
+}, { counter: 0, images: [] });
 
 export default home;
