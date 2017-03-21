@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as DashboardActions from '../actions/dashboard';
-import { Link } from 'react-router';
 
 class App extends React.Component {
     componentDidMount() {
@@ -17,7 +16,6 @@ class App extends React.Component {
                 <div>leo</div>
                 <a href="#" onClick={getThenShow.bind(this, 1)}>test</a><br />
                 <div>leo 44444444444444</div>
-                <Link to="/Home">Home</Link>
             </div>
         );
     }

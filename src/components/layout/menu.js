@@ -5,10 +5,10 @@ export default class Menu extends React.Component {
     render() {
         return (<div id="menu">
             <div className="pure-menu">
-                <Link to="/" className="pure-menu-heading">Pure</Link>
+                <Link to="/App" className="pure-menu-heading">App</Link>
                 <ul className="pure-menu-list">
                     <li className="pure-menu-item pure-menu-selected">
-                        <a href="/start/" className="pure-menu-link">Get Started</a>
+                        <Link to="/Home" className="pure-menu-link">My Gallery</Link>
                     </li>
                     <li className="pure-menu-item">
                         <a href="#" className="pure-menu-link">Layouts</a>
@@ -48,6 +48,6 @@ export default class Menu extends React.Component {
                     </li>
                 </ul>
             </div>
-        </div>)
+        </div>);
     }
 }
