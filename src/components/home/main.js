@@ -19,7 +19,6 @@ export default class Main extends React.Component {
                         {imageElements}
                     </div>
                 </section>
-                <footer className="footer">&copy; 2017 Leo  </footer>
             </div>
         );
     }
