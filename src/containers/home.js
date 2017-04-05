@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+import React, {PropTypes} from 'react';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 import * as homeActions from '../actions/home';
 import Main from '../components/home/main';
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 
 class Home extends React.Component {
     componentDidMount() {
@@ -12,10 +12,8 @@ class Home extends React.Component {
     }
 
     render() {
-        const { images } = this.props;
-        return (
-            <Main images={images} />
-        );
+        const {images} = this.props;
+        return (<Main images={images}/>);
     }
 }
 
@@ -24,13 +22,14 @@ Home.propTypes = {
 };
 
 function mapStateToProps(state) {
-    return {
-        images: state.home.images
-    };
+    return {images: state.home.images};
 }
 
 function mapDispatchToProps(dispatch) {
-    return { ...bindActionCreators(homeActions), dispatch: dispatch };
+    return {
+        ...bindActionCreators(homeActions, dispatch),
+        dispatch: dispatch
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
