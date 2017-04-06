@@ -16967,7 +16967,7 @@
 /* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -16978,6 +16978,10 @@
 	var _react = __webpack_require__(12);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _image = __webpack_require__(638);
+	
+	var _image2 = _interopRequireDefault(_image);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -16997,44 +17001,32 @@
 	    }
 	
 	    _createClass(Main, [{
-	        key: "render",
+	        key: 'render',
 	        value: function render() {
 	            var images = this.props.images;
 	
 	
-	            var imageElements = images.map(function (img) {
-	                return _react2.default.createElement(
-	                    "div",
-	                    { className: "pure-u-1-5 pure-u-md-1-3" },
-	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "image-details" },
-	                        _react2.default.createElement(
-	                            "a",
-	                            null,
-	                            _react2.default.createElement("img", { src: img.url })
-	                        )
-	                    )
-	                );
+	            var imageElements = images.map(function (img, index) {
+	                return _react2.default.createElement(_image2.default, { key: index, image: img });
 	            });
 	            return _react2.default.createElement(
-	                "div",
-	                { id: "main" },
+	                'div',
+	                { id: 'main' },
 	                _react2.default.createElement(
-	                    "header",
-	                    { className: "header" },
+	                    'header',
+	                    { className: 'header' },
 	                    _react2.default.createElement(
-	                        "h1",
+	                        'h1',
 	                        null,
-	                        "My Gallery"
+	                        'My Gallery'
 	                    )
 	                ),
 	                _react2.default.createElement(
-	                    "section",
-	                    { className: "content" },
+	                    'section',
+	                    { className: 'content' },
 	                    _react2.default.createElement(
-	                        "div",
-	                        { className: "pure-g" },
+	                        'div',
+	                        { className: 'pure-g' },
 	                        imageElements
 	                    )
 	                )
@@ -17119,7 +17111,7 @@
 	                            _react2.default.createElement(
 	                                'a',
 	                                { href: '#', className: 'pure-menu-link' },
-	                                'Layouts'
+	                                'Favorite'
 	                            )
 	                        ),
 	                        _react2.default.createElement(
@@ -40569,6 +40561,45 @@
 	  self.fetch.polyfill = true
 	})(typeof self !== 'undefined' ? self : this);
 
+
+/***/ },
+/* 638 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(12);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = Image = function Image(_ref) {
+	    var image = _ref.image;
+	    return _react2.default.createElement(
+	        "div",
+	        { className: "pure-u-1-5 pure-u-md-1-3" },
+	        _react2.default.createElement(
+	            "div",
+	            { className: "image-details" },
+	            _react2.default.createElement(
+	                "a",
+	                null,
+	                _react2.default.createElement("img", { src: image.url })
+	            ),
+	            _react2.default.createElement("br", null),
+	            _react2.default.createElement(
+	                "span",
+	                null,
+	                "Start"
+	            )
+	        )
+	    );
+	};
 
 /***/ }
 /******/ ]);

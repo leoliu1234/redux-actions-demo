@@ -11,7 +11,7 @@ export default class Menu extends React.Component {
                         <Link to="/Home" className="pure-menu-link">My Gallery</Link>
                     </li>
                     <li className="pure-menu-item">
-                        <a href="#" className="pure-menu-link">Layouts</a>
+                        <a href="#" className="pure-menu-link">Favorite</a>
                     </li>
                     <li className="pure-menu-item menu-item-divided">
                         <a href="/base/" className="pure-menu-link">Base</a>
