@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
-export default function Header() {
-    return <div className="header">
+const Header = () =>
+    <div className="header">
         <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
             <a className="pure-menu-heading" href="#">Your Site</a>
 
@@ -12,5 +12,5 @@ export default function Header() {
             </ul>
         </div>
     </div>;
-}
 
+export default Header;

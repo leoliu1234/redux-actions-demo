@@ -17092,7 +17092,6 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.default = Header;
 	
 	var _react = __webpack_require__(10);
 	
@@ -17100,7 +17099,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function Header() {
+	var Header = function Header() {
 	    return _react2.default.createElement(
 	        "div",
 	        { className: "header" },
@@ -17145,7 +17144,9 @@
 	            )
 	        )
 	    );
-	}
+	};
+	
+	exports.default = Header;
 
 /***/ },
 /* 267 */
