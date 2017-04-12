@@ -1,5 +1,5 @@
 body {
-  background: lightgoldenrodyellow; }
+  background: #F1F1F1; }
 
 #layout,
 #menu,
@@ -86,5 +86,8 @@ body {
   .image-details img {
     width: 8em;
     height: 6em; }
+
+.favorite .big-image img {
+  width: 100%; }
 
 /*# sourceMappingURL=app.css.map */

@@ -7,6 +7,7 @@ import { Router, IndexRoute, Route, hashHistory } from 'react-router';
 
 import Home from './containers/home';
 import App from './containers/app';
+import Favorite from './containers/favorite';
 import Layout from './containers/layout';
 import rootReducer from './reducers';
 import createLogger from 'redux-logger';
@@ -27,6 +28,7 @@ render(
                 <IndexRoute component={App} />
                 <Route path="Home" component={Home} />
                 <Route path="App" component={App} />
+                <Route path="Favorite" component={Favorite} />
             </Route>
         </Router>
     </Provider >,

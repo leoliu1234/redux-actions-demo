@@ -1,6 +1,6 @@
 $main-width: 60em;
 body {
-    background: lightgoldenrodyellow;
+    background: #F1F1F1;
 }
 
 #layout,
@@ -106,5 +106,13 @@ body {
     img {
         width: 8em;
         height: 6em;
+    }
+}
+
+.favorite {
+    .big-image {
+        img {
+            width: 100%;
+        }
     }
 }

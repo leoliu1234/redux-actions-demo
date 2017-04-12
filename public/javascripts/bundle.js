@@ -17213,8 +17213,8 @@
 	                            'li',
 	                            { className: 'pure-menu-item' },
 	                            _react2.default.createElement(
-	                                'a',
-	                                { href: '#', className: 'pure-menu-link' },
+	                                _reactRouter.Link,
+	                                { to: '/Favorite', className: 'pure-menu-link' },
 	                                'Favorite'
 	                            )
 	                        ),
@@ -17224,7 +17224,7 @@
 	                            _react2.default.createElement(
 	                                'a',
 	                                { href: '/base/', className: 'pure-menu-link' },
-	                                'Base'
+	                                'Private'
 	                            )
 	                        ),
 	                        _react2.default.createElement(
@@ -17604,6 +17604,10 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
+	var _favorite = __webpack_require__(642);
+	
+	var _favorite2 = _interopRequireDefault(_favorite);
+	
 	var _layout = __webpack_require__(270);
 	
 	var _layout2 = _interopRequireDefault(_layout);
@@ -17636,7 +17640,8 @@
 	            { path: '/', component: _layout2.default },
 	            _react2.default.createElement(_reactRouter.IndexRoute, { component: _app2.default }),
 	            _react2.default.createElement(_reactRouter.Route, { path: 'Home', component: _home2.default }),
-	            _react2.default.createElement(_reactRouter.Route, { path: 'App', component: _app2.default })
+	            _react2.default.createElement(_reactRouter.Route, { path: 'App', component: _app2.default }),
+	            _react2.default.createElement(_reactRouter.Route, { path: 'Favorite', component: _favorite2.default })
 	        )
 	    )
 	), document.getElementById('root'));
@@ -17728,11 +17733,16 @@
 	
 	var _dashboard2 = _interopRequireDefault(_dashboard);
 	
+	var _favorite = __webpack_require__(643);
+	
+	var _favorite2 = _interopRequireDefault(_favorite);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var rootReducer = (0, _redux.combineReducers)({
 	    home: _home2.default,
-	    dashboard: _dashboard2.default
+	    dashboard: _dashboard2.default,
+	    favorite: _favorite2.default
 	});
 	
 	exports.default = rootReducer;
@@ -40670,6 +40680,250 @@
 	  self.fetch.polyfill = true
 	})(typeof self !== 'undefined' ? self : this);
 
+
+/***/ },
+/* 640 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.fetchImages = exports.showimages = undefined;
+	
+	var _reduxActions = __webpack_require__(110);
+	
+	__webpack_require__(275);
+	
+	var _isomorphicFetch = __webpack_require__(478);
+	
+	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// export const increment = createAction('INCREMENT', amount => amount);
+	
+	var _createActions = (0, _reduxActions.createActions)({
+	    SHOWIMAGES: function SHOWIMAGES(images) {
+	        return images;
+	    }
+	});
+	
+	var showimages = _createActions.showimages;
+	exports.showimages = showimages;
+	var fetchImages = exports.fetchImages = function fetchImages() {
+	    return function (dispatch) {
+	        (0, _isomorphicFetch2.default)("/favoriteImage.json").then(function (response) {
+	            return response.json();
+	        }).then(function (json) {
+	            dispatch(showimages(json));
+	        });
+	    };
+	};
+
+/***/ },
+/* 641 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(10);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _image = __webpack_require__(644);
+	
+	var _image2 = _interopRequireDefault(_image);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Main = function Main(_ref) {
+	    var images = _ref.images;
+	
+	    var elements = images.map(function (img, index) {
+	        return _react2.default.createElement(_image2.default, { key: index, data: img });
+	    });
+	
+	    return _react2.default.createElement(
+	        'div',
+	        { id: 'main', className: 'favorite' },
+	        _react2.default.createElement(
+	            'header',
+	            { className: 'header' },
+	            _react2.default.createElement(
+	                'h1',
+	                null,
+	                'My Favorite'
+	            )
+	        ),
+	        _react2.default.createElement(
+	            'section',
+	            { className: 'content' },
+	            _react2.default.createElement('div', null),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'pure-g' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'pure-u-3-4' },
+	                    elements
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'pure-u-1-4' },
+	                    _react2.default.createElement(
+	                        'p',
+	                        null,
+	                        'Thirds'
+	                    )
+	                )
+	            )
+	        )
+	    );
+	};
+	
+	exports.default = Main;
+
+/***/ },
+/* 642 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(10);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _redux = __webpack_require__(90);
+	
+	var _reactRedux = __webpack_require__(163);
+	
+	var _favorite = __webpack_require__(640);
+	
+	var favoriteActions = _interopRequireWildcard(_favorite);
+	
+	var _main = __webpack_require__(641);
+	
+	var _main2 = _interopRequireDefault(_main);
+	
+	var _reactRouter = __webpack_require__(168);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Favorite = function (_React$Component) {
+	    _inherits(Favorite, _React$Component);
+	
+	    function Favorite() {
+	        _classCallCheck(this, Favorite);
+	
+	        return _possibleConstructorReturn(this, (Favorite.__proto__ || Object.getPrototypeOf(Favorite)).apply(this, arguments));
+	    }
+	
+	    _createClass(Favorite, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var fetchImages = this.props.fetchImages;
+	
+	            fetchImages();
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var props = this.props;
+	            return _react2.default.createElement(_main2.default, props);
+	        }
+	    }]);
+	
+	    return Favorite;
+	}(_react2.default.Component);
+	
+	;
+	
+	Favorite.propTypes = {
+	    dispatch: _react.PropTypes.func.isRequired,
+	    fetchImages: _react.PropTypes.func.isRequired
+	};
+	
+	function mapStateToProps(state) {
+	    return { images: state.favorite.images };
+	}
+	
+	function mapDispatchToProps(dispatch) {
+	    return _extends({}, (0, _redux.bindActionCreators)(favoriteActions, dispatch), {
+	        dispatch: dispatch
+	    });
+	}
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(Favorite);
+
+/***/ },
+/* 643 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _reduxActions = __webpack_require__(110);
+	
+	var favorite = (0, _reduxActions.handleActions)({
+	    SHOWIMAGES: function SHOWIMAGES(state, action) {
+	        return _extends({}, state, { images: action.payload
+	        });
+	    }
+	}, { images: [] });
+	
+	exports.default = favorite;
+
+/***/ },
+/* 644 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(10);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = Image = function Image(_ref) {
+	    var data = _ref.data;
+	    return _react2.default.createElement(
+	        "div",
+	        { className: "big-image" },
+	        _react2.default.createElement("img", { src: data.url })
+	    );
+	};
 
 /***/ }
 /******/ ]);
