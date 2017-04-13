@@ -23,7 +23,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+var options = {
+  maxAge: '365d'
+}
+app.use(express.static(path.join(__dirname, 'public'), options));
 
 app.use('/', index);
 app.use('/users', users);
