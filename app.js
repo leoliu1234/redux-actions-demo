@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
+var compression = require('compression');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -26,6 +27,8 @@ app.use(cookieParser());
 var options = {
   maxAge: '365d'
 }
+
+app.use(compression());
 app.use(express.static(path.join(__dirname, 'public'), options));
 
 app.use('/', index);
