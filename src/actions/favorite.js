@@ -10,7 +10,7 @@ export const { showimages } = createActions({
 
 export const fetchImages = () => {
     return dispatch => {
-        fetch("/favoriteImage.json")
+        fetch("/public/favoriteImage.json")
             .then(response => response.json())
             .then(json => {
                 dispatch(showimages(json));

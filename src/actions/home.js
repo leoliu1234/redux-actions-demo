@@ -51,7 +51,7 @@ export const getThenShow = subreddit => {
 
 export const fetchImages = () => {
     return dispatch => {
-        fetch("/data.json")
+        fetch("/public/data.json")
             .then(response => response.json())
             .then(json => {
                 dispatch(showimages(json));
